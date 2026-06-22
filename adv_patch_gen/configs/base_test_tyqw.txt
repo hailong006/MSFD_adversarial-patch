@@ -1,0 +1,29 @@
+{
+  "device": "cuda:0",  # 设备选择，如 "cpu" 或 "cuda:0"
+  "weights_file": "path/to/yolov5/weights.pt",  # YOLOv5模型权重文件路径
+  "patchfile": "path/to/adversarial_patch.png",  # 对抗性补丁图像文件路径
+  "imgdir": "path/to/test/images",  # 测试图像目录路径
+  "savedir": "runs/test_adversarial",  # 保存测试结果的目录路径
+  "patch_size": [200, 200],  # 对抗性补丁的尺寸
+  "model_in_sz": [640, 640],  # 模型输入尺寸
+  "target_size_frac": [0.3, 0.5],  # 补丁相对于目标框面积的比例范围
+  "mul_gau_mean": 1.0,  # 补丁变换中的乘法高斯噪声均值
+  "mul_gau_std": 0.1,  # 补丁变换中的乘法高斯噪声标准差
+  "x_off_loc": 0.0,  # 补丁在x轴上的偏移量
+  "y_off_loc": 0.0,  # 补丁在y轴上的偏移量
+  "patch_alpha": 1.0,  # 补丁透明度
+  "class_list": ["class1", "class2", "class3"],  # 类别列表
+  "patch_img_mode": "RGB",  # 补丁图像模式
+  "conf_thresh": 0.4,  # 置信度阈值
+  "nms_thresh": 0.4,  # 非极大值抑制阈值
+  "save_txt": false,  # 是否保存YOLO格式的检测结果
+  "save_image": false,  # 是否保存带有补丁的图像
+  "save_orig_padded_image": true,  # 是否保存原始填充后的图像
+  "draw_bbox_on_image": true,  # 是否在图像上绘制边界框
+  "class_agnostic": false,  # 是否忽略类别，仅评估目标检测
+  "target_class": null,  # 目标类别ID，用于特定类别的评估
+  "min_pixel_area": null,  # 最小像素面积，过滤掉面积小于该值的边界框
+  "save_plots": false,  # 是否保存混淆矩阵等图表
+  "save_video": false,  # 是否生成视频
+  "max_images": 100000  # 最大测试图像数量
+}

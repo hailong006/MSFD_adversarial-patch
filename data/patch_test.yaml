@@ -1,0 +1,18 @@
+# Ultralytics YOLOv5 🚀, AGPL-3.0 license
+# Patch Test dataset for YOLOv5 adversarial patch testing
+# Example usage: python val.py --data patch_test.yaml --weights yolov5s.pt
+
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: data/patch_test # dataset root dir
+train: images # train images (relative to 'path') - using all images for validation
+val: images # val images (relative to 'path') - using all images for validation
+test:  # test images (optional)
+
+# Classes (VisDrone dataset classes - remapped to start from 0)
+names:
+  0: car
+  1: van
+  2: truck
+  3: bus
+
+  
